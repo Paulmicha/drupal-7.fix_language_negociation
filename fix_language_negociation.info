@@ -1,0 +1,4 @@
+name = Fix Language Negociation
+description = Get browser language detection to work properly for anonymous users, see https://www.drupal.org/node/2257843
+core = 7.x
+dependencies[] = locale

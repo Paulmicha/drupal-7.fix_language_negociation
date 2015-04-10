@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Get browser language detection to work properly for anonymous users
+ * @see https://www.drupal.org/node/2257843
+ */
+
+/**
+ * Implements hook_language_negotiation_info_alter().
+ *
+ * Remove the 'cache' setting from LOCALE_LANGUAGE_NEGOTIATION_BROWSER since
+ * the code that utilizes this setting will in fact prevent browser negotiation.
+ */
+function fix_language_negociation_language_negotiation_info_alter(&$negotiation_info) {
+    unset($negotiation_info[LOCALE_LANGUAGE_NEGOTIATION_BROWSER]['cache']);
+}
